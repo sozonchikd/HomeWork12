@@ -10,5 +10,7 @@ public class Main {
         System.out.println();
         book1.setYear(1980);
         System.out.println("Год публикации " + book1.getYear());
+
+        System.out.println(book1);
     }
 }
