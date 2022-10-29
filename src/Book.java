@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Book {
     private String nameBook;
     private Author author;
@@ -27,7 +29,23 @@ public class Book {
     }
 
     public String toString() {
-        return " Название книги " + this.nameBook + ", год публикации " + this.year + ", автор " + author + ".";
+        return " Название книги '" + this.nameBook + "', год публикации " + this.year + ", автор " + author + ".";
+    }
+
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (other == null || getClass() != other.getClass()) {
+            return false;
+        }
+        Book book = (Book) other; // Приведение к типу который ожидаем
+        return year == book.year && Objects.equals(nameBook, book.nameBook) && Objects.equals(author, book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nameBook, author, year);
     }
 }
 

@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Main {
     public static void main(String[] args) {
         // Обьекты и классы.
@@ -6,11 +8,12 @@ public class Main {
 
         Author author2 = new Author("Даниел", "Киз");
         Book book2 = new Book("Цветы для Элджернона", author2, 1959);
-        System.out.print("Книга 1 = " + book1.getAuthor().getName() + " " + book1.getAuthor().getSurname());
-        System.out.println();
+        System.out.println("Книга 1 = " + book1.getAuthor().getName() + " " + book1.getAuthor().getSurname());
         book1.setYear(1980);
         System.out.println("Год публикации " + book1.getYear());
 
-        System.out.println(book1);
+        System.out.println(book2);
+        System.out.println(book1.equals(book2));
+        System.out.println(book1.hashCode());
     }
 }
