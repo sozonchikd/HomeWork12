@@ -40,7 +40,7 @@ public class Book {
             return false;
         }
         Book book = (Book) other; // Приведение к типу который ожидаем
-        return year == book.year && Objects.equals(nameBook, book.nameBook) && Objects.equals(author, book.author);
+        return year == book.year && nameBook.equals(book.nameBook) && author.equals(book.author);
     }
 
     @Override
